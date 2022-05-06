@@ -298,6 +298,29 @@ p {
 }
 
 @media print {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  p,
+li,
+a {
+    font-size: 0.9rem;
+  }
+
+  li {
+    margin-bottom: 0.2rem;
+  }
+
+  .text__block {
+    margin-bottom: 1.2rem !important;
+  }
+
   main {
     justify-content: flex-start;
     flex-direction: row;
@@ -308,7 +331,17 @@ p {
   }
 
   .left {
-    border-right: 2px solid black;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    max-width: 40%;
+  }
+
+  .right {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 0;
+    max-width: 60%;
   }
 
   * {
@@ -317,7 +350,7 @@ p {
 
   hr {
     border-color: black !important;
-    border-width: 2px;
+    border-width: 1px !important;
   }
 
   .icon img {
