@@ -14,11 +14,16 @@
 
 html,
 body {
-  width: 21cm;
-  height: 29.7cm;
   margin: auto;
   font-family: "Lato", sans-serif;
   background-color: #eeeeee;
+}
+@media screen and (min-width: 600px) {
+  html,
+body {
+    width: 21cm;
+    height: 29.7cm;
+  }
 }
 
 a,
@@ -34,27 +39,23 @@ a:visited:hover {
 main {
   display: flex;
   justify-content: flex-start;
+  flex-direction: column;
   max-width: 1440px;
   background-color: white;
   overflow: hidden;
   height: 100%;
+}
+@media screen and (min-width: 600px) {
+  main {
+    justify-content: flex-start;
+    flex-direction: row;
+  }
 }
 
 hr {
   border-style: solid;
   border-color: var(--accent);
   border-width: 2px;
-}
-
-.left {
-  width: 100%;
-  max-width: 35%;
-  padding: 1.5rem;
-  color: white;
-}
-.left hr {
-  border-color: white;
-  margin: 2rem 0;
 }
 
 h1 {
@@ -80,33 +81,61 @@ li {
   line-height: 1.2;
 }
 
+ul {
+  padding-left: 1rem;
+}
+ul li {
+  margin-bottom: 0.25rem;
+  color: inherit;
+  font-size: 0.9rem;
+}
+
 p {
   line-height: 1.2;
 }
 
-.right {
+.left {
   width: 100%;
-  max-width: 65%;
   padding: 1.5rem;
+  color: white;
 }
-
-.image {
+@media screen and (min-width: 600px) {
+  .left {
+    max-width: 40%;
+  }
+}
+.left hr {
+  border-color: white;
+  margin: 2rem 0;
+}
+.left .image {
   width: 100%;
   position: relative;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
-.image:before {
+.left .image:before {
   content: "";
   display: block;
-  padding-bottom: 125%;
+  padding-bottom: 100%;
 }
-.image img {
+.left .image img {
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
   object-fit: cover;
+  object-position: 0 -20px;
+}
+
+.right {
+  width: 100%;
+  padding: 1.5rem;
+}
+@media screen and (min-width: 600px) {
+  .right {
+    max-width: 60%;
+  }
 }
 
 .text .icon {
@@ -128,27 +157,20 @@ p {
   margin-bottom: 1.5rem;
 }
 .text .text__block .small {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   margin-bottom: 0.25rem;
   display: block;
+  letter-spacing: 0.1rem;
 }
 .text .text__block h4 {
   margin-bottom: 0.6rem;
   color: inherit;
 }
-.text .text__block ul {
-  padding-left: 1.25rem;
-}
-.text .text__block ul li {
-  margin-bottom: 0.25rem;
-  color: inherit;
-  font-size: 0.9rem;
-}
 
 .settings {
   position: fixed;
-  right: 0.25rem;
-  top: 50%;
+  right: 0.5rem;
+  top: 0.5rem;
   background-color: var(--accent);
   color: white;
   border-radius: 10px;
@@ -162,6 +184,13 @@ p {
   justify-content: flex-start;
   flex-direction: column;
   align-items: center;
+  filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.2));
+}
+@media screen and (min-width: 600px) {
+  .settings {
+    right: 0.25rem;
+    top: 50%;
+  }
 }
 .settings:hover {
   width: 8rem;
