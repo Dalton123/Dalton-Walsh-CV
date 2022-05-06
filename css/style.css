@@ -154,6 +154,7 @@ p {
   margin-right: 10px;
 }
 .text .text__block {
+  padding-right: 0.5rem;
   margin-bottom: 1.5rem;
 }
 .text .text__block .small {
@@ -163,7 +164,7 @@ p {
   letter-spacing: 0.1rem;
 }
 .text .text__block h4 {
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.7rem;
   color: inherit;
 }
 
