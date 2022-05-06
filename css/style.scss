@@ -333,6 +333,11 @@ p {
 }
 
 @media print {
+  main {
+    justify-content: flex-start;
+    flex-direction: row;
+  }
+
   .settings {
     display: none;
   }
