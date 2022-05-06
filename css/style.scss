@@ -1,0 +1,339 @@
+$main-font: "Lato", sans-serif;
+$second-font: "Roboto", sans-serif;
+
+:root {
+  --accent: #f05454;
+  --dark: #30475e;
+}
+[type="radio"] {
+  position: fixed;
+  left: -9999px;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 21cm;
+  height: 29.7cm;
+  margin: auto;
+  font-family: $main-font;
+  background-color: rgb(238, 238, 238);
+}
+
+a,
+a:visited {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+main {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 1440px;
+  background-color: white;
+  overflow: hidden;
+  height: 100%;
+}
+
+hr {
+  border-style: solid;
+  border-color: var(--accent);
+  border-width: 2px;
+}
+
+.left {
+  width: 100%;
+  max-width: 35%;
+  padding: 1.5rem;
+  color: white;
+
+  hr {
+    border-color: white;
+    margin: 2rem 0;
+  }
+}
+
+h1 {
+  color: var(--accent);
+  font-family: $second-font;
+  font-size: 2.5rem;
+  margin: 0;
+  letter-spacing: 0.2rem;
+}
+
+h2 {
+  font-family: $second-font;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+}
+
+h3,
+h4,
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  line-height: 1.2;
+}
+
+p {
+  line-height: 1.2;
+}
+
+.right {
+  width: 100%;
+  max-width: 65%;
+  padding: 1.5rem;
+}
+
+.image {
+  width: 100%;
+  position: relative;
+  margin-bottom: 3rem;
+
+  &:before {
+    content: "";
+    display: block;
+    padding-bottom: 125%;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.text {
+  .icon {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+    color: inherit;
+
+    &:last-child {
+      margin-bottom: 1.25rem;
+    }
+
+    img {
+      max-width: 15px;
+      margin-right: 10px;
+    }
+  }
+
+  .text__block {
+    margin-bottom: 1.5rem;
+
+    .small {
+      font-size: 0.75rem;
+      margin-bottom: 0.25rem;
+      display: block;
+    }
+
+    h4 {
+      margin-bottom: 0.6rem;
+      color: inherit;
+    }
+
+    ul {
+      padding-left: 1.25rem;
+      li {
+        margin-bottom: 0.25rem;
+        color: inherit;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+.settings {
+  position: fixed;
+  right: 0.25rem;
+  top: 50%;
+  background-color: var(--accent);
+  color: white;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  width: 4rem;
+  height: 4rem;
+  overflow: hidden;
+  transition: 0.2s;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+
+  &:hover {
+    width: 8rem;
+    height: 9rem;
+
+    .hide {
+      opacity: 1;
+    }
+
+    .gear {
+      transform: rotate(90deg);
+    }
+  }
+
+  .gear {
+    transition: 0.2s;
+    transform-origin: center;
+    margin-bottom: 1rem;
+    img {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.25rem;
+
+    &.collapse {
+      height: 0;
+      overflow: hidden;
+    }
+
+    .hide {
+      opacity: 0;
+      transition-delay: 0.2s;
+      transition-duration: 0.2s;
+    }
+
+    input {
+      margin-right: 0.5rem;
+      border: none;
+      cursor: pointer;
+    }
+
+    label {
+      color: inherit;
+      cursor: pointer;
+      &:before {
+        content: "";
+        display: inline-block;
+        margin-right: 0.5rem;
+        width: 0.8rem;
+        height: 0.8rem;
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+#dark:checked {
+  ~ .settings label[for="dark"] {
+    &:before {
+      background-size: 0.7rem;
+      background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 105.4C451.1 117.9 451.1 138.1 438.6 150.6L182.6 406.6C170.1 419.1 149.9 419.1 137.4 406.6L9.372 278.6C-3.124 266.1-3.124 245.9 9.372 233.4C21.87 220.9 42.13 220.9 54.63 233.4L159.1 338.7L393.4 105.4C405.9 92.88 426.1 92.88 438.6 105.4H438.6z"/%3E%3C/svg%3E');
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+  ~ .left {
+    background-color: var(--accent);
+    color: white;
+  }
+  ~ .right {
+    background-color: var(--dark);
+    color: white;
+  }
+}
+
+#colour:checked {
+  ~ .settings label[for="colour"] {
+    &:before {
+      background-size: 1rem;
+      background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 105.4C451.1 117.9 451.1 138.1 438.6 150.6L182.6 406.6C170.1 419.1 149.9 419.1 137.4 406.6L9.372 278.6C-3.124 266.1-3.124 245.9 9.372 233.4C21.87 220.9 42.13 220.9 54.63 233.4L159.1 338.7L393.4 105.4C405.9 92.88 426.1 92.88 438.6 105.4H438.6z"/%3E%3C/svg%3E');
+      background-position: center;
+    }
+  }
+
+  ~ .left {
+    background-color: var(--accent);
+    color: white;
+  }
+}
+
+#no-colour:checked {
+  ~ .settings label[for="no-colour"] {
+    &:before {
+      background-size: 1rem;
+      background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 105.4C451.1 117.9 451.1 138.1 438.6 150.6L182.6 406.6C170.1 419.1 149.9 419.1 137.4 406.6L9.372 278.6C-3.124 266.1-3.124 245.9 9.372 233.4C21.87 220.9 42.13 220.9 54.63 233.4L159.1 338.7L393.4 105.4C405.9 92.88 426.1 92.88 438.6 105.4H438.6z"/%3E%3C/svg%3E');
+      background-position: center;
+    }
+  }
+
+  ~ section a,
+  ~ section h1,
+  ~ section h2,
+  ~ section h3,
+  ~ section h4,
+  ~ section span,
+  ~ section p {
+    color: black;
+  }
+
+  ~ section hr {
+    border-color: black;
+  }
+
+  ~ .left {
+    border-right: 1px solid black;
+    .icon {
+      img {
+        filter: invert(100%);
+      }
+    }
+    .image {
+      img {
+        filter: grayscale(1);
+      }
+    }
+  }
+}
+
+@media print {
+  .settings {
+    display: none;
+  }
+
+  .left {
+    border-right: 2px solid black;
+  }
+
+  * {
+    color: black !important;
+  }
+
+  hr {
+    border-color: black !important;
+    border-width: 2px;
+  }
+
+  .icon {
+    img {
+      filter: invert(100%);
+    }
+  }
+
+  .image {
+    img {
+      filter: grayscale(1);
+    }
+  }
+}
