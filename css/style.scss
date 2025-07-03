@@ -348,7 +348,11 @@ p {
   }
   h2 {
     font-size: 1rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  h4 {
+    margin-bottom: 0.4rem !important;
   }
   p,
   li,
@@ -357,10 +361,10 @@ p {
   }
 
   li {
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.15rem;
   }
   .text__block {
-    margin-bottom: 1.2rem !important;
+    margin-bottom: 1rem !important;
   }
 
   main {
