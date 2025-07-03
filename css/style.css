@@ -16,11 +16,11 @@ html,
 body {
   margin: auto;
   font-family: "Lato", sans-serif;
-  background-color: #eeeeee;
+  background-color: rgb(238, 238, 238);
 }
 @media screen and (min-width: 600px) {
   html,
-body {
+  body {
     width: 21cm;
     height: 29.7cm;
   }
@@ -61,15 +61,16 @@ hr {
 h1 {
   color: inherit;
   font-family: "Roboto", sans-serif;
-  font-size: 2.5rem;
-  margin: 0;
+  font-size: 2rem;
+  margin: 0 0 0.5rem 0;
   letter-spacing: 0.2rem;
 }
 
 h2 {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
-  font-size: 1.25rem;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 h3,
@@ -79,6 +80,7 @@ li {
   padding: 0;
   margin: 0;
   line-height: 1.2;
+  text-wrap: pretty;
 }
 
 ul {
@@ -92,6 +94,7 @@ ul li {
 
 p {
   line-height: 1.2;
+  text-wrap: pretty;
 }
 
 .left {
@@ -106,26 +109,19 @@ p {
 }
 .left hr {
   border-color: white;
-  margin: 2rem 0;
+  margin: 1rem 0;
 }
 .left .image {
   width: 100%;
   position: relative;
-  margin-bottom: 2rem;
-}
-.left .image:before {
-  content: "";
-  display: block;
-  padding-bottom: 100%;
+  margin-bottom: 0.5rem;
 }
 .left .image img {
-  position: absolute;
-  top: 0;
-  left: 0;
   height: 100%;
   width: 100%;
   object-fit: cover;
   object-position: 0 -20px;
+  aspect-ratio: 1/1;
 }
 
 .right {
@@ -138,12 +134,15 @@ p {
   }
 }
 
+.text > *:first-child {
+  margin-top: 0;
+}
 .text .icon {
   display: flex;
   justify-content: start;
   align-items: center;
   font-size: 0.8rem;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   color: inherit;
 }
 .text .icon:last-child {
@@ -155,7 +154,7 @@ p {
 }
 .text .text__block {
   padding-right: 0.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 .text .text__block .small {
   font-size: 0.7rem;
@@ -166,6 +165,10 @@ p {
 .text .text__block h4 {
   margin-bottom: 0.7rem;
   color: inherit;
+}
+
+.text__block p:first-child {
+  margin-top: 0;
 }
 
 .settings {
@@ -302,62 +305,50 @@ p {
   h1 {
     font-size: 1.5rem;
   }
-
   h2 {
     font-size: 1rem;
     margin-bottom: 0.75rem;
   }
-
   p,
-li,
-a {
+  li,
+  a {
     font-size: 0.9rem;
   }
-
   li {
     margin-bottom: 0.2rem;
   }
-
   .text__block {
     margin-bottom: 1.2rem !important;
   }
-
   main {
     justify-content: flex-start;
     flex-direction: row;
   }
-
   .settings {
     display: none;
   }
-
   .left {
     padding-top: 0;
     padding-bottom: 0;
     padding-left: 0;
     max-width: 40%;
   }
-
   .right {
     padding-top: 0;
     padding-bottom: 0;
     padding-right: 0;
     max-width: 60%;
   }
-
   * {
     color: black !important;
   }
-
   hr {
     border-color: black !important;
     border-width: 1px !important;
   }
-
   .icon img {
     filter: invert(100%);
   }
-
   .image img {
     filter: grayscale(1);
   }
