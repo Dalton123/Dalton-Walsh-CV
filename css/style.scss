@@ -58,7 +58,7 @@ hr {
 h1 {
   color: inherit;
   font-family: $second-font;
-  font-size: 2rem;
+  font-size: 1.75rem;
   margin: 0 0 0.5rem 0;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
@@ -88,12 +88,16 @@ ul {
     margin-bottom: 0.25rem;
     color: inherit;
     font-size: 0.9rem;
+    font-weight: 300;
   }
 }
 
 p {
   line-height: 1.2;
   text-wrap: pretty;
+  font-weight: 300;
+  margin-top: 0.35rem;
+  margin-bottom: 0rem;
 }
 
 .left {
@@ -102,7 +106,7 @@ p {
   color: white;
 
   @media screen and (min-width: 600px) {
-    max-width: 40%;
+    max-width: 37%;
   }
 
   hr {
@@ -130,7 +134,7 @@ p {
   padding: 1.5rem;
 
   @media screen and (min-width: 600px) {
-    max-width: 60%;
+    max-width: 63%;
   }
 }
 
@@ -381,13 +385,13 @@ p {
     padding-top: 0;
     padding-bottom: 0;
     padding-left: 0;
-    max-width: 40%;
+    max-width: 36%;
   }
   .right {
     padding-top: 0;
     padding-bottom: 0;
     padding-right: 0;
-    max-width: 60%;
+    max-width: 64%;
   }
 
   * {
